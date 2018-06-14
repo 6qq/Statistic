@@ -48,11 +48,11 @@ public class InfoPanel extends JPanel{
 	}
 	
 	void setInfo(double ex, double ey, double varx, double vary, double corxy, double covxy) {
-		eX.setText("E(X) =" + " " + ex);
-		eY.setText("E(Y) =" + " " + ey);
-		varX.setText("Var(X) =" + " " + varx);
-		varY.setText("Var(Y) =" + " " + vary);
-		cov.setText("Cov(X,Y) =" + " " + covxy);
-		cor.setText("Cor(X,Y) =" + " " + corxy);
+		eX.setText("E(X) =" + " " + String.format("%.2f", ex));
+		eY.setText("E(Y) =" + " " + String.format("%.2f", ey));
+		varX.setText("Var(X) =" + " " + String.format("%.2f", varx));
+		varY.setText("Var(Y) =" + " " + String.format("%.2f", vary));
+		cov.setText("Cov(X,Y) =" + " " + String.format("%.3f", covxy));
+		cor.setText("Cor(X,Y) =" + " " + String.format("%.3f", corxy));
 	}
 }

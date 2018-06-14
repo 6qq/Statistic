@@ -49,6 +49,7 @@ public class GraphPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				pointer = new Point(0,0);
+				sight = 1;
 				repaint();
 			}
 		});
@@ -92,11 +93,11 @@ public class GraphPanel extends JPanel{
 			double a = height - sight*line[0];
 			double b = -line[1];
 			g.setColor(Color.red);
-			int x1 = width/2 + Math.min(-width + pointer.x, -height + pointer.y) - pointer.x;
-			int y1 = -height/2 + (int)(a + Math.min(-width + pointer.x, -height + pointer.y)*b) - pointer.y;
-			int x2 = width/2 + Math.max(width - pointer.x, height - pointer.y) - pointer.x;
-			int y2 = -height/2 + (int)(a + Math.max(width - pointer.x, height - pointer.y)*b) - pointer.y;
-			g.drawLine(x1, y1, x2, y2);
+			int x1 = -(int)(sight*1000000);
+			int y1 = (int)(a + x1*b);
+			int x2 = (int)(sight*1000000);
+			int y2 = (int)(a + x2*b);
+			g.drawLine(x1 + width/2 - pointer.x, y1 - height/2 - pointer.y, x2 + width/2 - pointer.x, y2 - height/2 - pointer.y);
 		}
 	}
 	
